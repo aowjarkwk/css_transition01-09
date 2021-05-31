@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>연습문제2 - 네이버홈 만들기</title>
+  <!-- 네이버 홈페이지를 시멘틱형태로 제작하시오. -->
+  <!-- PC/태블릿/모바일 반응형으로 제작 -->
+  <!-- DM으로 제출 -->
+  <!-- 태블릿형식 -->
+  <!-- 헤더-검색바 (앵커태그 삭제) -->
+  <!-- 네비바 메일 카페 블로그 뉴스 증권 만 표현-->
+  <!-- 섹션(광고, 뉴스바, 뉴스스탠드) -->
+  <!-- 어사이드 배치 -->
+  <!-- 바닥글 footer  - 회사소개,인재채용,고객센터 3개만 표현 -->
+  <!-- 모바일형식 -->
+  <!-- 검색바 -->
+  <!-- 네비바 메일 카페 블로그 뉴스 증권 만 표현 -->
+  <!-- 섹션(광고, 뉴스바, 뉴스스탠드) -->
+  <!-- 어사이드 없음 -->
+  <!-- 푸터 - 회사소개,인재채용,고객센터 3개만 표현 -->
+  <style>
+    * { margin: 0; padding: 0; }
+    .wrap > div {
+        border: 1px solid gray;
+        margin: 0 auto;
+        max-width: 1000px;
+    }
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+    }
+    .header input {
+        width: 400px;
+        height: 25px;
+        margin: 10px;
+    }
+    .header a { 
+      font-size: 14px;
+    }
+    a {
+        color: black;
+        text-decoration: none;
+        margin: 5px;
+    }
+    .nav {
+        height: 40px;
+        font-weight: bold;
+    }
+    .main {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        /* height: 450px; */
+    }
+    .section {
+        flex: 1 70%;
+        max-width: 700px;
+    }
+    .section img {
+      max-width: 700px;
+    }
+    .section p { margin: 20px; margin-left: 0; }
+    .aside {
+        border: 1px solid gray;
+        flex: 1 30%;
+        max-width: 300px;
+    }
+    .aside img {
+      max-width: 250px;
+    }
+    .flex {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: space-around;
+    }
+    .flex img:nth-child(2) {
+        width: 300px;
+        padding: 20px;
+    }
+    li { 
+        list-style: none;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    @media screen and (min-width: 768px)
+    and (max-width: 959px) {
+        .header a { display: none;}
+        .nav a:nth-child(4), a:nth-child(5), a:nth-child(6), a:nth-child(7), a:nth-child(8),
+        a:nth-child(11) ~ a { display: none; }
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            }
+        /* .section img:nth-child(1) ~ img {display: none;} */
+        .aside img:last-child {width: 300px;}
+        .footer a[href="#1"] {display: none;}
+    }
+    @media screen and (max-width: 767px)
+    and (orientation: portrait) {
+        .header a {display: none;}
+        .header > img {display: none;}
+        .nav a:nth-child(4), a:nth-child(5), a:nth-child(6), a:nth-child(7), a:nth-child(8),
+        a:nth-child(11) ~ a { display: none; }
+        /* .section img:nth-child(1) ~ img {display: none;} */
+        .aside {display: none;}
+        .footer a[href="#1"] {display: none;}
+        .section img:first-child {width: 500px;}
+    }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <img src="naver.png" alt="naver">
+        <input type="search">
+        <a href="#">네이버를 시작페이지로></a>
+        <a href="#">주니어네이버</a>
+        <a href="#">해피빈</a>
+    </div>
+    <div class="nav">
+        <a href="#">메일</a>
+        <a href="#">카페</a>
+        <a href="#">블로그</a>
+        <a href="#">지식IN</a>
+        <a href="#">쇼핑</a>
+        <a href="#">Pay</a>
+        <a href="#">TV</a>
+        <a href="#">사전</a>
+        <a href="#">뉴스</a>
+        <a href="#">증권</a>
+        <a href="#">부동산</a>
+        <a href="#">지도</a>
+        <a href="#">영화</a>
+        <a href="#">뮤직</a>
+        <a href="#">책</a>
+        <a href="#">웹툰</a>
+        <a href="#">더보기</a>
+    </div>
+    <div class="main">
+        <div class="section">
+            <img src="banner.png" alt="ad">
+            <p>연합뉴스 > 서울시 긴급재난기원금 위기봉착..</p>
+            <p>뉴스스탠드 > 전체 언론사 | MY 뉴스</p>
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+            <img src="http://placehold.it/110x58" alt="">
+        </div>
+        <div class="aside flex">
+            <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+            <img src="login.png" alt="login">
+            <ul>
+                <li><a href="#">아이디 비밀번호 찾기</a></li>
+                <li><a href="#">08.21 (화) 스포츠</a></li>
+                <li><a href="#">해외축구 중계</a></li>
+                <li><a href="#">손흥민 군사훈력 시작</a></li>
+                <li><a href="#">르브론 제임스 훈련 시작</a></li>
+            </ul>
+            <img src="banner2.png" alt="ad">
+        </div>
+    </div>
+    <div class="footer">
+        <a href="#">회사소개</a>
+        <a href="#">인재채용</a>
+        <a href="#1">제휴제안</a>
+        <a href="#1">이용약관</a>
+        <a href="#1">개인정보처리방침</a>
+        <a href="#1">청소년보호정책</a>
+        <a href="#1">네이버 정책</a>
+        <a href="#">고객센터</a>
+        <a href="#1">ⓒ NAVER Corp.</a>
+    </div>
+</div>
+</body>
+</html>

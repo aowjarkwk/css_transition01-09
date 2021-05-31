@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ex05.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3차원 변환 함수</title>
+    <!-- 3차원 좌표계 변환 -->
+    <!-- transform함수들 -->
+    <!-- translate3d(X,Y,Z) : X,Y,Z 위치 이동 -->
+    <!-- translateX, translateY, translateZ -->
+    <!-- scale3d(X,Y,Z) : 크기 변경 -->
+    <!-- scaleX, scaleY, scaleZ  -->
+    <!-- rotate3d(X,Y,Z) : 회전 -->
+    <!-- rotateX, rotateY, rotateZ -->
+    <style>
+        body {
+            width: 200px;
+            margin: 200px auto;
+            /* 원근감을 준다. */
+            perspective: 2000;
+        }
+        section {
+            width: 200px; height: 200px;
+            position: relative;
+            /* 3D입체 효과 */
+            transform-style: preserve-3d;
+            /* 애니메이션 효과 */
+            /*         애니이름 재생시간 보간타입 지연시간 횟수 재생타입 */
+            animation: myanim 3s linear 0s infinite alternate;
+        }
+        section:hover {
+            animation-play-state: paused;
+        }
+        @keyframes myanim {
+            from {
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }   
+            to {
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+        div {
+            width: 200px; height: 200px;
+            position: absolute; 
+            left: 0; top: 0;
+            opacity: 0.5;
+            /* 뒷면은 안보이게 */
+            backface-visibility: hidden ;
+        }
+        /* 옆면 */
+        div:nth-child(1) {
+            transform: rotateY(0deg) translate3d(0px,0px,100px);
+            background-color:  red;
+        }
+        div:nth-child(2) {
+            transform: rotateY(90deg) translate3d(0px,0px,100px);
+            background-color:  green;
+        }
+        div:nth-child(3) {
+            transform: rotateY(180deg) translate3d(0px,0px,100px);
+            background-color:  blue;
+        }
+        div:nth-child(4) {
+            transform: rotateY(270deg) translate3d(0px,0px,100px);
+            background-color:  yellow;
+        }
+        /* 윗면과 아랫면 */
+        div:nth-child(5) {
+            transform: rotateX(90deg) translate3d(0px, 0px, 100px);
+            background-color: brown;
+        }
+        div:nth-child(6) {
+            transform: rotateX(270deg) translate3d(0px, 0px, 100px);
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 정육면체 입체도형을 회전시켜 보자. -->
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+</html>

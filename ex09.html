@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>연습문제2 - 네이버홈 만들기</title>
+    <!-- 네이버 홈페이지를 시멘틱형태로 제작하시오. -->
+
+    <!-- PC/태블릿/모바일 반응형으로 제작 -->
+
+    <!-- 테블릿형식 -->
+    <!-- 헤더-검색바 (네이버를....바 삭제)-->
+    <!-- 네비바 -->
+    <!-- 섹션 (광고, 뉴스바,뉴스스탠드)-->
+    <!-- 어사이드 삭제 -->
+    <!-- 바닥글 footer -->
+
+    <!-- 모바일형식 -->
+    <!-- 검색바 -->
+    <!-- 네비바 - 메일 카페 블로그 뉴스 증권 만 표현 -->
+    <!-- 섹션 -->
+    <!-- 푸터 - 회사소개,인재채용,고객센터 3개만 표현-->
+    <style>
+        body {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .wrap {
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            border: 1px solid black;
+        }
+
+        .header {
+            flex: 1 100%;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid black;
+            height: 80px;
+        }
+
+        .startpage {
+            margin-left: 5px
+        }
+
+        .header input {
+            width: 325px;
+            height: 20px;
+        }
+
+        .nav {
+
+            display: flex;
+            height: 25px;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .nav a {
+            margin-right: 6px;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .ad {
+            border-top: 1px solid gray;
+            flex: 1 60%;
+            height: 400px;
+        }
+
+        .ad img {
+            margin-top: 10px;
+        }
+
+        .aside {
+            height: 400px;
+            flex: 1 35%;
+            border-top: 1px solid gray;
+            border-left: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        #aside2{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            
+        }
+        #aside2 span{
+            margin-top: 6px;
+        }
+
+        .aside span {
+            font-weight: bold;
+        }
+
+        #login {
+            margin-left: 10px;
+        }
+
+        .newsbox {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 1px solid gray;
+        }
+
+        .box {
+            flex: 1 15%;
+            margin: 2px;
+            background-color: gray;
+            width: 110px;
+            height: 58px;
+        }
+
+        .footer {
+            width: 1000px;
+            display: flex;
+            border-top: 1px solid black;
+            height: 30px;
+            align-items: center;
+        }
+
+        @media screen and (min-width:768px) and (max-width:959px) {
+            body{
+                width: 900px;
+                margin: 0 auto;
+            }
+            .wrap {
+                display: flex;
+            }
+
+            .header a {
+                display: none;
+            }
+
+            .header {
+                display: flex;
+                justify-content: center;
+            }
+
+            .nav a {
+                display: none;
+
+            }
+
+
+            .nav a:nth-child(1) {
+                display: flex;
+            }
+
+            .nav a:nth-child(2) {
+                display: flex;
+            }
+
+            .nav a:nth-child(3) {
+                display: flex;
+            }
+
+            .nav a:nth-child(8) {
+                display: flex;
+            }
+
+            .nav a:nth-child(9) {
+                display: flex;
+            }
+
+            .nav {
+                margin-left: 400px;
+            }
+
+            .ad {
+                flex: 1 100%;
+            }
+
+            .section {
+                flex: 1 100%;
+            }
+
+            .aside {
+                display: flex;
+                flex-wrap: wrap;
+                order: 3;
+            }
+
+            #aside2 {
+                flex: 1 100%;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-around;
+                
+            }
+    
+
+            #banner2 {
+                flex: 1 50%;
+                width: 430px;
+                order:2;
+
+            }
+
+            .footer a {
+                display: none;
+            }
+
+            .footer a:nth-child(1) {
+                display: flex;
+            }
+
+            .footer a:nth-child(2) {
+                display: flex;
+            }
+
+            .footer a:nth-child(8) {
+                display: flex;
+            }
+
+            .footer {
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 767px) and (orientation: portrait) {
+            body {
+                width: 600px;
+                margin: 0 auto;
+            }
+
+            .wrap {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .header {
+                display: flex;
+                justify-content: center;
+            }
+
+            .aside {
+                display: none;
+            }
+
+            .newsbox {
+                height: 300px;
+            }
+
+            .box {
+                flex: 1 20%
+            }
+
+            .header a {
+                display: none;
+            }
+
+            .nav a {
+                display: none;
+
+            }
+
+            .nav {
+                display: flex;
+                justify-content: center;
+                margin-left: 200px;
+            }
+
+            .nav a:nth-child(1) {
+                display: flex;
+            }
+
+            .nav a:nth-child(2) {
+                display: flex;
+            }
+
+            .nav a:nth-child(3) {
+                display: flex;
+            }
+
+            .nav a:nth-child(8) {
+                display: flex;
+            }
+
+            .nav a:nth-child(9) {
+                display: flex;
+            }
+
+
+            .footer {
+                margin-top: 100px;
+                height: 100px;
+            }
+
+            .footer a {
+                display: none;
+            }
+
+            .footer a:nth-child(1) {
+                display: flex;
+            }
+
+            .footer a:nth-child(2) {
+                display: flex;
+            }
+
+            .footer a:nth-child(8) {
+                display: flex;
+            }
+            .footer{
+                justify-content: center;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <img src="naver.png" alt=""><input type="text">
+            <div class="startpage"><a href="#">네이버를 시작페이지로></a> <a href="#">주니어네이버 해피빈</a></div>
+        </div>
+        <div class="nav">
+            <a href="#">메일</a>
+            <a href="#">카페</a>
+            <a href="#">블로그</a>
+            <a href="#">지식IN</a>
+            <a href="#">쇼핑</a>
+            <a href="#">Pay</a>
+            <a href="#">TV</a>
+            <a href="#">뉴스</a>
+            <a href="#">증권</a>
+            <a href="#">부동산</a>
+            <a href="#">지도</a>
+            <a href="#">영화</a>
+            <a href="#">뮤직</a>
+            <a href="#">책</a>
+            <a href="#">웹툰</a>
+            <a href="#">더보기</a>
+        </div>
+        <div class="main">
+            <div class="ad"><img src="banner.png" width="600px">
+                <div>연합뉴스 > 서울시 긴급재난기원금 위기봉착..</div>
+                <br>
+                <div>뉴스스탠드 > 전체언론사 | MY뉴스</div>
+                <div class="newsbox">
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                    <div class="box">110x58</div>
+                </div>
+            </div>
+
+            <div class="aside">
+                <div id="aside2">
+                    <div>네이버를 더 안전하고 편리하게 이용하세요</div>
+                    <img src="login.png" width="350px" id="login">
+                    <span>아이디.비밀번호 찾기</span>
+                    <span>08.21 (화) 스포츠</span>
+                    <span>해외축구 중계</span>
+                    <span>손흥민 국사훈련 시작</span>
+                    <span>르브론 제임스 훈련시작</span>
+                </div>
+                <img src="banner2.png" id="banner2">
+            </div>
+        </div>
+        <div class="footer">
+            <a href="">회사소개|</a>
+            <a href="">인재채용|</a>
+            <a href="">제휴제안|</a>
+            <a href="">이용약관|</a>
+            <a href="">개인정보처리방침|</a>
+            <a href="">청소년보호정책|</a>
+            <a href="">네이버 정책|</a>
+            <a href="">고객센터|</a>
+            <a href="">© NAVER Corp.</a>
+        </div>
+
+    </div>
+</body>
+
+</html>

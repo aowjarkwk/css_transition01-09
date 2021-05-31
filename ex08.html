@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>반응형웹과 flex연습문제1</title>
+    <style>
+        .wrap{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+        .wrap>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        
+        
+        .header{
+            background-color: greenyellow;
+            flex:1 100%;
+            
+        }
+        .section1{
+            background-color: hotpink;
+            flex:1 50%;
+            height: 150px;
+        }
+        .section2{
+            background-color: indianred;
+            flex:1 50%;
+        }
+        .section3{
+            background-color: skyblue;
+            flex:1 50%;
+            height: 150px;
+        }
+        .section4{
+            background-color: slateblue;
+            flex:1 50%;
+        }
+        .ad{
+            background-color: purple;
+            flex: 1 50%;
+        }
+        .info{
+            background-color: rgb(31, 26, 59);
+            flex: 1 50%;
+        }
+        .footer{
+            background-color: cyan;
+            flex:1 100%
+        }
+        /* 태블릿 해상도 */
+
+        @media screen and (min-width:768px) and 
+        (max-width:959px) {
+            
+            
+            .header{
+                flex: 1 80%;
+                order:1;
+            }
+            .ad{
+                order: 2;
+                flex: 1 20%;
+            }
+            .section1{
+                order:3;
+                flex:1 100%;
+            }
+            .section2{
+                order:4;
+                flex:1 100%;
+            }
+            .section3{
+                order:5;
+                flex:1 100%
+            }
+            .section4{
+                order: 6;
+                flex: 1 100%;
+            }
+            .info{
+                order:7;
+                flex:1 30%
+            }
+            .footer{
+                order:8;
+                flex:1 70%
+            }
+
+        }
+        @media screen and (max-width: 767px) and 
+        (orientation: portrait) {
+            .header{
+                flex:1 100%
+            }
+            .section1{
+                flex: 1 100%;
+            }
+            .section2{
+                flex:1 100%;
+            }
+            .section3{
+                height: 100px;
+            }
+            .info{
+                flex:1 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <div class="header"><h1>헤더</h1></div>
+    <div class="section1"><h1>섹션1</h1></div>
+    <div class="section2"><h1>섹션2</h1></div>
+    <div class="section3"><h1>섹션3</h1></div>
+    <div class="section4"><h1>섹션4</h1></div>
+    <div class="ad"><h1>광고</h1></div>
+    <div class="info"><h1>정보</h1></div>
+    <div class="footer"><h1>푸터</h1></div>
+    </div>
+</div>
+</body>
+</html>

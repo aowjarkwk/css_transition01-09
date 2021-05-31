@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>animation 속성</title>
+    <title>animation 속성</title>
+    <!-- 애니메이션 속성 -->
+    <!-- HTML5 게임(웹게임)을 만들 수 있음. -->
+    <!-- 시각적 효과를 줄수 있음. -->
+    <!-- animation : (간결한표현) 모든 animation속성을 한번에 적용 -->
+    <!-- animation-delay : 지연시간 -->
+    <!-- animation-duration : 재생시간 -->
+    <!-- animation-timing-function : ease타입 보간타입 -->
+    <!-- animation-direction: 방향 cw ccw  -->
+    <!-- animation-interation-count: 횟수 -->
+    <!-- animation-name: 애니메이션 이름 -->
+    <!-- animation-play-state: 상태값 정지/시작 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+        }
+
+        #box {
+            /* 부모를 상대좌표로 만들어야 됨. */
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            text-align: center;
+            background: linear-gradient(rgb(147, 76, 240) 0%,
+                    rgb(68, 2, 112) 100%);
+            animation-name: myanim;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            /*무한반복*/
+            animation-direction: alternate;
+            /* 양방향,normal 단방향 */
+        }
+
+        #box:hover {
+            animation-play-state: paused;
+        }
+
+        #box>h1 {
+            /* 중앙으로 보내려면 부모의 높이와 동일하게 */
+            line-height: 200px;
+        }
+
+        @keyframes myanim {
+            from {
+                /* 시작점 */
+                left: 0px;
+                transform: rotate(0deg);
+            }
+
+            50% {
+                /* 50% 지점*/
+                left: 80px;
+            }
+
+            to {
+                /* 끝점*/
+                left: 100px;
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 동그라미를 회전시키는 애니메이션 -->
+    <div id="box">
+        <h1>Rotation</h1>
+    </div>
+</body>
+
+</html>
